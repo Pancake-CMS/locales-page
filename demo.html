@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="import" href="./locales-page.html" />
+        <link rel="import" href="./bower_components/polymerfire/firebase-app.html">
+    </head>
+
+    <body>
+        <template is="dom-bind" id="Demo1">
+            <firebase-app
+                auth-domain="__YOUR_AUTH_DOMAIN__"
+                database-url="__YOUR_DATABASE_URL__"
+                api-key="__YOUR_API_KEY__">
+            </firebase-app>
+            <locales-page></locales-page>
+        </template>
+        <script>
+
+        </script>
+    </body>
+</html>

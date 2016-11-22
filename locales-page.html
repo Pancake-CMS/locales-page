@@ -1,0 +1,36 @@
+<link rel="import" href="./bower_components/polymer/polymer.html">
+<link rel="import" href="./bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="./bower_components/locales-creator/locales-creator.html">
+<link rel="import" href="./bower_components/paper-item/paper-item.html">
+<link rel="import" href="./bower_components/polymerfire/firebase-document.html">
+
+<dom-module id="locales-page">
+    <template>
+        <style type="text/css">
+            locales-creator {
+                width: 500px;
+            }
+        </style>
+        <locales-creator></locales-creator>
+        <paper-listbox>
+            <template is="dom-repeat" items="[[locales]]">
+                <paper-item{{item.value}}></paper-item>
+            </template>
+        </paper-listbox>
+        <firbase-document
+            path="/locales"
+            data="{{locales}}"></firbase-document>
+    </template>
+    <script>
+        Polymer({
+            is: 'locales-page',
+
+            properties: {
+                locales: {
+                    type: Object,
+                    notify: true
+                }
+            }
+        });
+    </script>
+</dom-module>
