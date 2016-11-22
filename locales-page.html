@@ -7,6 +7,12 @@
 <dom-module id="locales-page">
     <template>
         <style type="text/css">
+        :host {
+                display: none;
+            }
+            :host([active]){
+                display: block;
+            }
             locales-creator {
                 width: 500px;
             }
