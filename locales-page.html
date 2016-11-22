@@ -17,15 +17,16 @@
                 width: 500px;
             }
         </style>
-        <locales-creator></locales-creator>
+        <locales-creator locales="{{locales}}"></locales-creator>
         <paper-listbox>
             <template is="dom-repeat" items="[[locales]]">
-                <paper-item{{item.value}}></paper-item>
+                <paper-item>{{item}}</paper-item>
             </template>
         </paper-listbox>
-        <firbase-document
+        <firebase-document
             path="/locales"
-            data="{{locales}}"></firbase-document>
+            data="{{locales}}">
+        </firebase-document>
     </template>
     <script>
         Polymer({
@@ -33,7 +34,7 @@
 
             properties: {
                 locales: {
-                    type: Object,
+                    type: Array,
                     notify: true
                 }
             }
